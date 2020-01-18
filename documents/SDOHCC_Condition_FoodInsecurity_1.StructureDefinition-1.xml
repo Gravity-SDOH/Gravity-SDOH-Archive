@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="SDOHCC-Condition-FoodInsecurity-1" />
+  <url value="http://example.org/fhir/StructureDefinition/SDOHCC-Condition-FoodInsecurity-1" />
+  <name value="SDOHCC_Condition_FoodInsecurity_1" />
+  <status value="draft" />
+  <description value="This profile supports Gravity Project data elements that focus on the Food Insecurity domain. The profile constrains Conditions related to: Food insecurity, Mild food insecurity, Moderate food insecurity, or Severe food insecurity." />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="sct-concept" />
+    <uri value="http://snomed.info/conceptdomain" />
+    <name value="SNOMED CT Concept Domain Binding" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="sct-attr" />
+    <uri value="http://snomed.org/attributebinding" />
+    <name value="SNOMED CT Attribute Binding" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <min value="1" />
+    </element>
+    <element id="Condition.clinicalStatus.coding">
+      <path value="Condition.clinicalStatus.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.clinicalStatus.coding.system">
+      <path value="Condition.clinicalStatus.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.0" />
+    </element>
+    <element id="Condition.clinicalStatus.coding.code">
+      <path value="Condition.clinicalStatus.coding.code" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.0" />
+      </binding>
+    </element>
+    <element id="Condition.clinicalStatus.coding.display">
+      <path value="Condition.clinicalStatus.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Condition.verificationStatus.coding">
+      <path value="Condition.verificationStatus.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.verificationStatus.coding.system">
+      <path value="Condition.verificationStatus.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/ValueSet/condition-ver-status|4.0.0" />
+    </element>
+    <element id="Condition.verificationStatus.coding.code">
+      <path value="Condition.verificationStatus.coding.code" />
+      <min value="1" />
+      <fixedCode value="confirmed" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/condition-ver-status|4.0.0" />
+      </binding>
+    </element>
+    <element id="Condition.verificationStatus.coding.display">
+      <path value="Condition.verificationStatus.coding.display" />
+      <min value="1" />
+      <fixedString value="Confirmed" />
+    </element>
+    <element id="Condition.verificationStatus.coding.userSelected">
+      <path value="Condition.verificationStatus.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <min value="1" />
+    </element>
+    <element id="Condition.category.coding">
+      <path value="Condition.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.category.coding.system">
+      <path value="Condition.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/us/core/ValueSet/us-core-condition-category" />
+    </element>
+    <element id="Condition.category.coding.code">
+      <path value="Condition.category.coding.code" />
+      <min value="1" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-condition-category" />
+      </binding>
+    </element>
+    <element id="Condition.category.coding.display">
+      <path value="Condition.category.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <min value="1" />
+    </element>
+    <element id="Condition.code.coding">
+      <path value="Condition.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.code.coding.system">
+      <path value="Condition.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Condition.code.coding.code">
+      <path value="Condition.code.coding.code" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://trifolia-fhir-dev.lantanagroup.com/lantana_prod_hapi_r4/SDOH-CC/ValueSet/sdohcc-sctt-vs-8e8bc50a-bb9d-1753-2461-2419df70cef8" />
+      </binding>
+    </element>
+    <element id="Condition.code.coding.display">
+      <path value="Condition.code.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter" />
+      </type>
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence.code">
+      <path value="Condition.evidence.code" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence.detail">
+      <path value="Condition.evidence.detail" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://trifolia-fhir-dev.lantanagroup.com/lantana_prod_hapi_r4/SDOH-CC/StructureDefinition/SDOHCC_Observation_FoodInsecurity_1" />
+      </type>
+    </element>
+    <element id="Condition.note.author[x]">
+      <path value="Condition.note.author[x]" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
