@@ -42,9 +42,17 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
   <derivation value="constraint" />
   <differential>
+    <element id="Condition.identifier.assigner">
+      <path value="Condition.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+    </element>
     <element id="Condition.clinicalStatus">
       <path value="Condition.clinicalStatus" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Condition.clinicalStatus.coding">
       <path value="Condition.clinicalStatus.coding" />
@@ -67,6 +75,10 @@
     <element id="Condition.clinicalStatus.coding.display">
       <path value="Condition.clinicalStatus.coding.display" />
       <min value="1" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <path value="Condition.verificationStatus" />
+      <mustSupport value="true" />
     </element>
     <element id="Condition.verificationStatus.coding">
       <path value="Condition.verificationStatus.coding" />
@@ -99,6 +111,7 @@
     <element id="Condition.category">
       <path value="Condition.category" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Condition.category.coding">
       <path value="Condition.category.coding" />
@@ -129,6 +142,7 @@
     <element id="Condition.code">
       <path value="Condition.code" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Condition.code.coding">
       <path value="Condition.code.coding" />
@@ -162,6 +176,14 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject.identifier.assigner">
+      <path value="Condition.subject.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
     </element>
     <element id="Condition.encounter">
       <path value="Condition.encounter" />
@@ -169,6 +191,13 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter" />
+      </type>
+    </element>
+    <element id="Condition.encounter.identifier.assigner">
+      <path value="Condition.encounter.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
       </type>
     </element>
     <element id="Condition.onset[x]">
@@ -194,12 +223,26 @@
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
       </type>
     </element>
+    <element id="Condition.recorder.identifier.assigner">
+      <path value="Condition.recorder.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+    </element>
     <element id="Condition.asserter">
       <path value="Condition.asserter" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+    </element>
+    <element id="Condition.asserter.identifier.assigner">
+      <path value="Condition.asserter.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
       </type>
     </element>
     <element id="Condition.stage">
@@ -216,6 +259,13 @@
       <type>
         <code value="Reference" />
         <targetProfile value="https://trifolia-fhir-dev.lantanagroup.com/lantana_prod_hapi_r4/SDOH-CC/StructureDefinition/SDOHCC_Observation_FoodInsecurity_1" />
+      </type>
+    </element>
+    <element id="Condition.evidence.detail.identifier.assigner">
+      <path value="Condition.evidence.detail.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
       </type>
     </element>
     <element id="Condition.note.author[x]">

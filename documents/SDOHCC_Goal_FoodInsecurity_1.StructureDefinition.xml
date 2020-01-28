@@ -27,6 +27,17 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Goal" />
   <derivation value="constraint" />
   <differential>
+    <element id="Goal.identifier.assigner">
+      <path value="Goal.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+    </element>
+    <element id="Goal.lifecycleStatus">
+      <path value="Goal.lifecycleStatus" />
+      <mustSupport value="true" />
+    </element>
     <element id="Goal.achievementStatus">
       <path value="Goal.achievementStatus" />
       <min value="1" />
@@ -55,6 +66,10 @@
     <element id="Goal.achievementStatus.coding.display">
       <path value="Goal.achievementStatus.coding.display" />
       <min value="1" />
+    </element>
+    <element id="Goal.description">
+      <path value="Goal.description" />
+      <mustSupport value="true" />
     </element>
     <element id="Goal.description.coding">
       <path value="Goal.description.coding" />
@@ -86,11 +101,20 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Goal.subject.identifier.assigner">
+      <path value="Goal.subject.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
     </element>
     <element id="Goal.target">
       <path value="Goal.target" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Goal.target.measure">
       <path value="Goal.target.measure" />
@@ -151,6 +175,10 @@
       <path value="Goal.target.detail[x].coding.userSelected" />
       <max value="0" />
     </element>
+    <element id="Goal.target.due[x]">
+      <path value="Goal.target.due[x]" />
+      <mustSupport value="true" />
+    </element>
     <element id="Goal.statusDate">
       <path value="Goal.statusDate" />
       <min value="1" />
@@ -163,6 +191,13 @@
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" />
       </type>
     </element>
+    <element id="Goal.expressedBy.identifier.assigner">
+      <path value="Goal.expressedBy.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+    </element>
     <element id="Goal.addresses">
       <path value="Goal.addresses" />
       <type>
@@ -172,13 +207,17 @@
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" />
       </type>
     </element>
+    <element id="Goal.addresses.identifier.assigner">
+      <path value="Goal.addresses.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+    </element>
     <element id="Goal.note.author[x]">
       <path value="Goal.note.author[x]" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
       </type>
       <type>
@@ -194,6 +233,13 @@
       <type>
         <code value="Reference" />
         <targetProfile value="https://trifolia-fhir-dev.lantanagroup.com/lantana_prod_hapi_r4/SDOH-CC/StructureDefinition/SDOHCC_Observation_FoodInsecurity_1" />
+      </type>
+    </element>
+    <element id="Goal.outcomeReference.identifier.assigner">
+      <path value="Goal.outcomeReference.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
       </type>
     </element>
   </differential>
